@@ -1,6 +1,9 @@
 const btnE1 = document.getElementById("btn");
+
 const birthdayE1 = document.getElementById("birthday");
+
 const resultE1 = document.getElementById("result");
+
 function calculateAge(){
     const birthdayValue = birthdayE1.Value;
     if(birthdayValue === ""){
@@ -12,13 +15,12 @@ function calculateAge(){
 }
 function getAge(birthdayValue){
     const currentDate = new Date();
-    const birthdayDate = new date(birthdayValue);
+    const birthdayDate = new Date(birthdayValue);
     let age = currentDate.getFullYear() - birthdayDate.getFullYear();
     const month = currentDate.getMonth() - birthdayDate.getMonth();
-    if(month<0 || (month === 0 && currentDate.getDate () < birthdayDate.getMonth())){
+    if(month<0 || (month === 0 && currentDate.getDate() < birthdayDate.getMonth())){
         age--
     }
-
     return age;
 }
-btnE1.addEventListener("click", calculateAge)
+btnE1.addEventListener("click", calculateAge);
